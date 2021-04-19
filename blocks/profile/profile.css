@@ -1,0 +1,8 @@
+.profile {
+  padding-top: 36px;
+  padding-bottom: 47px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+}
