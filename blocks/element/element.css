@@ -1,0 +1,8 @@
+.element {
+  color: #000;
+  display: grid;
+  grid-template-columns: repeat(3, 282px);
+  grid-template-rows: repeat(auto-fit, 1fr);
+  gap: 20px 17px;
+  margin: 0 auto;
+}
