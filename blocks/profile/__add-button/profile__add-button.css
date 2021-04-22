@@ -10,3 +10,7 @@
   transform: translateY(-50%);
   background-color: inherit;
 }
+
+.profile__add-button:hover {
+  opacity: 0.6;
+}
