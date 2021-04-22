@@ -6,3 +6,12 @@
   align-items: center;
   position: relative;
 }
+
+@media (max-width: 680px) {
+  .profile {
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 0;
+    padding-top: 38px;
+  }
+}

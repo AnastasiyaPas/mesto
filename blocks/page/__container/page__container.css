@@ -2,3 +2,21 @@
   margin: 0 auto;
   max-width: 880px;
 }
+
+@media (max-width: 900px) {
+  .page__container {
+    max-width: 97%;
+  }
+}
+
+@media (max-width: 550px) {
+  .page__container {
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 420px) {
+  .page__container {
+    max-width: 100%;
+  }
+}

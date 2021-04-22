@@ -6,3 +6,10 @@
   align-items: center;
   padding: 25px 21px 31px;
 }
+
+@media (max-width: 420px) {
+  .element__description {
+    width: 282px;
+    padding: 0;
+  }
+}

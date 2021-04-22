@@ -4,5 +4,35 @@
   grid-template-columns: repeat(3, 282px);
   grid-template-rows: repeat(auto-fit, 1fr);
   gap: 20px 17px;
-  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .element {
+    grid-template-columns: repeat(3, 32%);
+  }
+}
+
+@media (max-width: 800px) {
+  .element {
+    grid-template-columns: repeat(2, 49%);
+  }
+}
+
+@media (max-width: 550px) {
+  .element {
+    grid-template-columns: repeat(1, 100%);
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .element {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0 19px;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+  }
 }

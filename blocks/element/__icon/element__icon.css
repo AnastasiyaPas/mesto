@@ -1,9 +1,18 @@
 .element__icon {
   background-image: url(../../../images/like.svg);;
-  width: 22px;
+  width: 23px;
   height: 19px;
+  padding-left: 5px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .element__icon:hover {
   opacity: 0.6;
+}
+
+@media (max-width: 420px) {
+  .element__icon {
+    padding: 0 30px;
+  }
 }
