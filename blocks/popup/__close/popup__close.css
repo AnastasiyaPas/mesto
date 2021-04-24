@@ -1,0 +1,27 @@
+.popup__close {
+  width: 35px;
+  height: 35px;
+  background-image: url(../../../images/Close\ Icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 0;
+  
+  border: none;
+  position: absolute;
+  top: -35px;
+  right: -35px;
+  background-color: rgba(0, 0, 0, .0);
+}
+
+.popup__close:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 600px) {
+  .popup__close {
+    top: -45px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+  }
+}
