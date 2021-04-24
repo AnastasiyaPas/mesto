@@ -11,4 +11,4 @@
 
 **Git**
 
-* [Ссылка на страничку на GitHub Pages](https://)
+* [Ссылка на страничку на GitHub Pages](https://anastasiyapas.github.io/mesto/)
