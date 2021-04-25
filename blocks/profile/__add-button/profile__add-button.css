@@ -4,10 +4,6 @@
   border: 2px solid #FFFFFF;
   box-sizing: border-box;
   border-radius: 2px;
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
   background-color: inherit;
   padding: 0;
 }
