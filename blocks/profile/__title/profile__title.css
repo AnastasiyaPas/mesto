@@ -1,8 +1,6 @@
 .profile__title {
-  display: flex;
-  justify-content: start;
-  align-items: flex-end;
-  margin: 0 0 16px;
+  margin: 0;
+  max-width: 500px;
   font-weight: 500;
   font-size: 42px;
   line-height: 48px;
@@ -11,16 +9,10 @@
   overflow: hidden;
 }
 
-@media (max-width: 680px) {
-  .profile__title{
-    margin: 22px 0 14px;
-  }
-}
 
 @media (max-width: 420px) {
   .profile__title {
     font-size: 27px;
     line-height: 33px;
-    transform: translateX(20px);
   }
 }

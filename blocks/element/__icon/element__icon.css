@@ -1,10 +1,13 @@
 .element__icon {
   background-image: url(../../../images/like.svg);
+  border: none;
   width: 23px;
   height: 19px;
-  padding-left: 5px;
+  padding: 0;
+  margin-left: 5px;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: contain;
 }
 
 .element__icon:hover {
