@@ -9,10 +9,22 @@
   overflow: hidden;
 }
 
+@media (max-width: 900px) {
+  .profile__title {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 750px) {
+  .profile__title {
+    max-width: 300px;
+  }
+}
 
 @media (max-width: 420px) {
   .profile__title {
     font-size: 27px;
     line-height: 33px;
+    max-width: 90%;
   }
 }
