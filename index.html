@@ -79,6 +79,16 @@
             <button type="button" class="element__icon"></button>
           </div>
         </article>
+
+        <template id="element-template">
+          <article class="element__container">
+            <img class="element__image" src="./images/петергоффонтан.jpg" alt="Фонтаны в Петергофе">
+            <div class="element__description">
+              <h2 class="element__title">Петергоф</h2>
+              <button type="button" class="element__icon"></button>
+            </div>
+          </article>
+        </template>
       </section>
 
     </main>
@@ -98,6 +108,18 @@
         <button type="submit" class="popup__submit-button">Сохранить</button>
       </form>
       </div>
+  </div>
+
+  <div id="popup-images" class="popup">
+    <div class="popup__container">
+      <button type="button" class="popup__close"></button>
+      <h2 class="popup__title">Новое место</h2>
+      <form name="popup-form" class="popup__form">
+        <input name="form-name" class="popup__text popup__text_form_name" placeholder="Название">
+        <input name="form-job" class="popup__text popup__text_form_job" placeholder="Ссылка на картинку">
+        <button type="submit" class="popup__submit-button">Создать</button>
+      </form>
+    </div>
   </div>
 
   <script src="./scripts/index.js"></script>
