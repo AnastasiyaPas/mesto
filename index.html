@@ -31,64 +31,8 @@
             alt="плюсик"></button>
       </section>
 
-      <section class="element page__container">
-        <article class="element__container">
-          <img class="element__image" src="./images/разведениемоста.jpg" alt="Развод моста">
-          <div class="element__description">
-            <h2 class="element__title">Дворцовый мост</h2>
-            <button type="button" class="element__icon"></button>
-          </div>
-        </article>
-
-        <article class="element__container">
-          <img class="element__image" src="./images/исаакиевскийсобор.jpg" alt="Исаакиевский собор">
-          <div class="element__description">
-            <h2 class="element__title">Исаакиевский собор</h2>
-            <button type="button" class="element__icon"></button>
-          </div>
-        </article>
-
-        <article class="element__container">
-          <img class="element__image" src="./images/алыепаруса.jpg" alt="Корабль с алыми парусами">
-          <div class="element__description">
-            <h2 class="element__title">Алые паруса</h2>
-            <button type="button" class="element__icon"></button>
-          </div>
-        </article>
-
-        <article class="element__container">
-          <img class="element__image" src="./images/эрмитаж2.jpg" alt="Эрмитаж">
-          <div class="element__description">
-            <h2 class="element__title">Эрмитаж</h2>
-            <button type="button" class="element__icon"></button>
-          </div>
-        </article>
-
-        <article class="element__container">
-          <img class="element__image" src="./images/вид.jpg" alt="вид с высоты птичьего полета на Санкт-Петербург">
-          <div class="element__description">
-            <h2 class="element__title">Санкт-Петербург</h2>
-            <button type="button" class="element__icon"></button>
-          </div>
-        </article>
-
-        <article class="element__container">
-          <img class="element__image" src="./images/петергоффонтан.jpg" alt="Фонтаны в Петергофе">
-          <div class="element__description">
-            <h2 class="element__title">Петергоф</h2>
-            <button type="button" class="element__icon"></button>
-          </div>
-        </article>
-
-        <template id="element-template">
-          <article class="element__container">
-            <img class="element__image" src="./images/петергоффонтан.jpg" alt="Фонтаны в Петергофе">
-            <div class="element__description">
-              <h2 class="element__title">Петергоф</h2>
-              <button type="button" class="element__icon"></button>
-            </div>
-          </article>
-        </template>
+      <section class="element page__container">       
+        
       </section>
 
     </main>
@@ -115,12 +59,22 @@
       <button type="button" class="popup__close"></button>
       <h2 class="popup__title">Новое место</h2>
       <form name="popup-form" class="popup__form">
-        <input name="form-name" class="popup__text popup__text_form_name" placeholder="Название">
-        <input name="form-job" class="popup__text popup__text_form_job" placeholder="Ссылка на картинку">
+        <input type="text" name="form-title" class="popup__text popup__text_form_title" placeholder="Название">
+        <input type="url" name="form-link" class="popup__text popup__text_form_link" placeholder="Ссылка на картинку">
         <button type="submit" class="popup__submit-button">Создать</button>
       </form>
     </div>
   </div>
+
+  <template id="element-template">
+    <article class="element__container">
+      <img class="element__image" src="./images/петергоффонтан.jpg" alt="Фонтаны в Петергофе">
+      <div class="element__description">
+        <h2 class="element__title"></h2>
+        <button type="button" class="element__icon"></button>
+      </div>
+    </article>
+  </template>
 
   <script src="./scripts/index.js"></script>
 </body>
