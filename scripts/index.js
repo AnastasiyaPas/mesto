@@ -17,6 +17,8 @@ const saveButton = popupAdd.querySelector('.popup__submit-button');
 const openAddButton = document.querySelector('.profile__add-button');
 const closeAddButton = popupAdd.querySelector('.popup__close');
 
+const formElementAdd = document.querySelector('#form-popup');
+
 const initialCards = [
   {
     name: 'Архыз',
@@ -41,23 +43,37 @@ const initialCards = [
   {
     name: 'Байкал',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }];
+  }]; 
 
-//saveButton.addEventListener('click', function() {
-  //const newElement = elementTemplate.content.querySelector('.element__container').cloneNode(true);
   
 
-initialCards.forEach(function (item) {
+function newCard (title, image) {
   const newElement = elementTemplate.content.querySelector('.element__container').cloneNode(true);
   const titleItem = newElement.querySelector('.element__title');
   const imageItem = newElement.querySelector('.element__image');
-  
-  titleItem.textContent = item.name;
-  imageItem.src = item.link;
+  titleItem.textContent = title;
+  imageItem.src = image;
 
-  elementContainer.append(newElement);
+  elementContainer.prepend(newElement);
+}
+
+
+initialCards.forEach(function(item) {
+  title = item.name;
+  image = item.link;
+  newCard (title, image);
   console.log(123);
 });
+
+function formSubmitHandlerAdd (evt) {
+  evt.preventDefault();
+  title = titleInput.value;
+  image = linkInput.value;
+  newCard (title, image);
+  closeAddPopup();
+}
+
+formElementAdd.addEventListener('submit', formSubmitHandlerAdd);
 
 function openPopup(classList) {
   popup.classList.add('popup__opened');
