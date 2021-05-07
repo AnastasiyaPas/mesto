@@ -53,10 +53,12 @@ function newCard (title, image) {
   const imageItem = newElement.querySelector('.element__image');
   titleItem.textContent = title;
   imageItem.src = image;
+  newElement.querySelector('.element__icon').addEventListener('click', function(evt) {
+    evt.target.classList.toggle('element__icon_active');
+  });
 
   elementContainer.prepend(newElement);
 }
-
 
 initialCards.forEach(function(item) {
   title = item.name;
