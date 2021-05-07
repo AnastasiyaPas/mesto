@@ -1,0 +1,18 @@
+.element__trash {
+  background-image: url(../../../images/Group.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: inherit;
+  border: none;
+  padding: 0;
+  width: 18px;
+  height: 20px;
+  position: absolute;
+  top: 18px;
+  right: 15px;
+}
+
+.element__trash:hover {
+  opacity: 0.6;
+}

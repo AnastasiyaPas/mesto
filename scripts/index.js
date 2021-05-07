@@ -51,12 +51,16 @@ function newCard (title, image) {
   const newElement = elementTemplate.content.querySelector('.element__container').cloneNode(true);
   const titleItem = newElement.querySelector('.element__title');
   const imageItem = newElement.querySelector('.element__image');
+  const cardRemoveButton = newElement.querySelector('.element__trash');
+
   titleItem.textContent = title;
   imageItem.src = image;
   newElement.querySelector('.element__icon').addEventListener('click', function(evt) {
     evt.target.classList.toggle('element__icon_active');
   });
-
+  cardRemoveButton.addEventListener('click', function(evt) {
+    evt.target.closest('.element__container').remove();
+  })
   elementContainer.prepend(newElement);
 }
 
