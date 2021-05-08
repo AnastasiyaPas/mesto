@@ -1,0 +1,8 @@
+.popup__container_image_box {
+  background-color: inherit;
+  padding: 0;
+  object-position: center;
+  width: auto;
+  max-width: fit-content;
+  min-height: auto;
+}
