@@ -59,7 +59,7 @@ function closePopup(item) {
   item.classList.remove('popup__opened');
 }
 
-function newCard (title, image) {
+function createNewCard (title, image) {
   const newElement = elementTemplate.content.querySelector('.element__container').cloneNode(true);
   const titleItem = newElement.querySelector('.element__title');
   const imageItem = newElement.querySelector('.element__image');
@@ -88,20 +88,16 @@ function newCard (title, image) {
 }
 
 initialCards.forEach(function(item) {
-  title = item.name;
-  image = item.link;
-  newCard (title, image);
+  createNewCard (item.name, item.link);
 });
 
-function formSubmitHandlerAdd (evt) {
+function addNewCard (evt) {
   evt.preventDefault();
-  title = titleInput.value;
-  image = linkInput.value;
-  newCard (title, image);
+  createNewCard (titleInput.value, linkInput.value);
   closePopup(popupAdd);
 }
 
-formElementAdd.addEventListener('submit', formSubmitHandlerAdd);
+formElementAdd.addEventListener('submit', addNewCard);
 
 openPopupButton.addEventListener('click', () => {
   openPopup(popup);
@@ -119,11 +115,11 @@ closeAddButton.addEventListener('click', () => {
   closePopup(popupAdd);
 });
 
-function formSubmitHandler (evt) {
+function addNewProfile (evt) {
   evt.preventDefault();
   profileTitle.textContent = nameInput.value;
   profileSubtitle.textContent = jobInput.value;
   closePopup(popup);
 }
 
-formElement.addEventListener('submit', formSubmitHandler);
+formElement.addEventListener('submit', addNewProfile);
