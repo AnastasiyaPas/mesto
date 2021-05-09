@@ -60,7 +60,7 @@ function closePopup(item) {
 }
 
 function createNewCard (title, image) {
-  const newElement = elementTemplate.content.querySelector('.element__container').cloneNode(true);
+  let newElement = elementTemplate.content.querySelector('.element__container').cloneNode(true);
   const titleItem = newElement.querySelector('.element__title');
   const imageItem = newElement.querySelector('.element__image');
   const cardRemoveButton = newElement.querySelector('.element__trash');
@@ -83,17 +83,19 @@ function createNewCard (title, image) {
   closeButtonImage.addEventListener('click', () => {
     closePopup(popupImageBox);
   })
-
-  elementContainer.prepend(newElement);
+  
+  return newElement;
 }
 
+elementContainer.prepend(createNewCard);
+
 initialCards.forEach(function(item) {
-  createNewCard (item.name, item.link);
+  elementContainer.prepend(createNewCard(item.name, item.link));
 });
 
 function addNewCard (evt) {
   evt.preventDefault();
-  createNewCard (titleInput.value, linkInput.value);
+  elementContainer.prepend(createNewCard(titleInput.value, linkInput.value));
   closePopup(popupAdd);
 }
 
