@@ -1,8 +1,8 @@
 .popup__text {
   font-size: 14px;
   line-height: 17px;
-  margin: 0 0 17px;
-  padding: 13px 0;
+  margin: 0 0 5px;
+  padding: 22px 0 13px;
   border: none;
   width: 100%;
   border-bottom: 1px solid rgba(0, 0, 0, .2);

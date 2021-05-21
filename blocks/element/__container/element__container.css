@@ -3,6 +3,7 @@
   flex-direction: column;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
   position: relative;
+  height: max-content;
 }
 
 @media (max-width: 420px) {
