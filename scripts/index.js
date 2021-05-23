@@ -61,13 +61,13 @@ const initialCards = [
   });
  
 function openPopup(item) {
-  item.classList.add('popup__opened');
+  item.classList.add('popup_opened');
   closeOverlay (item);
   closeEscape(item);
 }
 
 function closePopup(item) {
-  item.classList.remove('popup__opened');
+  item.classList.remove('popup_opened');
 }
 
 function createNewCard (title, image) {
@@ -127,7 +127,7 @@ function addNewCard (evt) {
 function closeOverlay (item) {
   item.addEventListener('mousedown', (evt) => {
   if (evt.target === evt.currentTarget) {
-    item.classList.remove('popup__opened');
+    item.classList.remove('popup_opened');
     }
   });
 }
