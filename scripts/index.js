@@ -125,7 +125,7 @@ function addNewCard (evt) {
 }
 
 function closeOverlay (item) {
-  item.addEventListener('click', (evt) => {
+  item.addEventListener('mousedown', (evt) => {
   if (evt.target === evt.currentTarget) {
     item.classList.remove('popup__opened');
     }
