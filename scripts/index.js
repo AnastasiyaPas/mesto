@@ -1,7 +1,7 @@
 const formProfile = document.querySelector('#form-profile');
 const buttonOpenProfilePopup = document.querySelector('.profile__button');
 const popupProfile = document.querySelector('#popup-profile');
-const buttonClosePopup = document.querySelector('.popup__close');
+const buttonCloseProfilePopup = popupProfile.querySelector('.popup__close');
 const nameInput = popupProfile.querySelector('.popup__text_form_name');
 const jobInput = popupProfile.querySelector('.popup__text_form_job');
 const profileTitle = document.querySelector('.profile__title');
@@ -138,7 +138,7 @@ function closeOverlay (popupList) {
   popupList.forEach(popup => {
     popup.addEventListener('mousedown', (evt) => {
       if (evt.target === evt.currentTarget) {
-      popup.classList.remove('popup_opened');
+      closePopup(popup);
       }
     });
   });
@@ -159,7 +159,7 @@ buttonOpenProfilePopup.addEventListener('click', () => {
   jobInput.value = profileSubtitle.textContent;
 });
 
-buttonClosePopup.addEventListener('click', () => {
+buttonCloseProfilePopup.addEventListener('click', () => {
   clearForm (formProfile);
   closePopup(popupProfile);
 });
