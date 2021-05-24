@@ -44,7 +44,6 @@ function setEventListeners(form, {inputSelector, submitButtonSelector, inactiveB
       toggleButtonState(button, inputs, inactiveButtonClass);
     });
   });
-  
 }
 
 function enableValidation({formSelector, ...restConfig}) {

@@ -60,7 +60,8 @@ const initialCards = [
     inputErrorClass: 'popup__input_type_error',
     errorClass: 'popup__error_visible'
   }
-  enableValidation(config);
+
+enableValidation(config);
  
 function openPopup(item) {
   item.classList.add('popup_opened');
@@ -84,6 +85,7 @@ function createNewCard (title, image) {
   newElement.querySelector('.element__icon').addEventListener('click', function(evt) {
     evt.target.classList.toggle('element__icon_active');
   });
+
   cardRemoveButton.addEventListener('click', function(evt) {
     evt.target.closest('.element__container').remove();
   });
@@ -109,16 +111,20 @@ initialCards.forEach(function(item) {
 formElementAdd.addEventListener('submit', addNewCard);
 
 function clearForm (form) {
-  const inputList = Array.from(form.querySelectorAll('.popup__input'));
-  const errors = Array.from(form.querySelectorAll('.popup__error'));
-  
-  inputList.forEach(input => {
-    input.value = '';
-    input.classList.remove('popup__input_type_error');
-  });
-  errors.forEach(error => error.classList.remove('popup__error_visible'));
+  const inputList = Array.from(form.querySelectorAll('.popup__input')); 
+  const errors = Array.from(form.querySelectorAll('.popup__error')); 
+  const button = form.querySelector('.popup__submit-button');
 
-  form.reset();
+  inputList.forEach(input => {
+    input.value = ''; 
+    input.classList.remove('popup__input_type_error'); 
+  });
+
+  errors.forEach(error => error.classList.remove('popup__error_visible'));
+  button.classList.add('popup__button_disabled');
+  button.disabled = true;
+ 
+  form.reset(); 
 }
 
 function addNewCard (evt) {
