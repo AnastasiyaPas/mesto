@@ -8,6 +8,7 @@ const profileTitle = document.querySelector('.profile__title');
 const profileSubtitle = document.querySelector('.profile__subtitle');
 const elementTemplate = document.querySelector('#element-template');
 const elementContainer = document.querySelector('.element');
+const popupList = Array.from(document.querySelectorAll('.popup'));
 
 const popupAdd = document.querySelector('#popup-cards');
 const titleInput = popupAdd.querySelector('.popup__text_form_title');
@@ -63,12 +64,12 @@ const initialCards = [
  
 function openPopup(item) {
   item.classList.add('popup_opened');
-  closeOverlay (item);
-  closeEscape(item);
+  document.addEventListener('keydown', closeEscape);
 }
 
 function closePopup(item) {
   item.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closeEscape);
 }
 
 function createNewCard (title, image) {
@@ -79,6 +80,7 @@ function createNewCard (title, image) {
 
   titleItem.textContent = title;
   imageItem.src = image;
+  imageItem.alt = title;
   newElement.querySelector('.element__icon').addEventListener('click', function(evt) {
     evt.target.classList.toggle('element__icon_active');
   });
@@ -89,6 +91,7 @@ function createNewCard (title, image) {
   imageItem.addEventListener('click', (item) => {
     openPopup(popupImageBox);
     popupImage.src = image;
+    popupImage.alt = title;
     popupSubtitle.textContent = title;
   });
 
@@ -125,20 +128,23 @@ function addNewCard (evt) {
   closePopup(popupAdd);
 }
 
-function closeOverlay (item) {
-  item.addEventListener('mousedown', (evt) => {
-  if (evt.target === evt.currentTarget) {
-    item.classList.remove('popup_opened');
-    }
+function closeOverlay (popupList) {
+  popupList.forEach(popup => {
+    popup.addEventListener('mousedown', (evt) => {
+      if (evt.target === evt.currentTarget) {
+      popup.classList.remove('popup_opened');
+      }
+    });
   });
 }
 
-function closeEscape (item) {
-  document.addEventListener('keydown', (evt) => {
+closeOverlay (popupList);
+
+function closeEscape (evt) {
   if (evt.key === 'Escape') {
-    closePopup(item);
+    const popup = document.querySelector('.popup_opened');
+    closePopup(popup);
   }
- });
 }
 
 buttonOpenProfilePopup.addEventListener('click', () => {
