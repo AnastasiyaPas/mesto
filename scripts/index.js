@@ -1,9 +1,9 @@
-const formElement = document.querySelector('.popup__form');
-const openPopupButton = document.querySelector('.profile__button');
-const popup = document.querySelector('#popup-profile');
-const closePopupButton = popup.querySelector('.popup__close');
-const nameInput = popup.querySelector('.popup__text_form_name');
-const jobInput = popup.querySelector('.popup__text_form_job');
+const formProfile = document.querySelector('#form-profile');
+const buttonOpenProfilePopup = document.querySelector('.profile__button');
+const popupProfile = document.querySelector('#popup-profile');
+const buttonClosePopup = document.querySelector('.popup__close');
+const nameInput = popupProfile.querySelector('.popup__text_form_name');
+const jobInput = popupProfile.querySelector('.popup__text_form_job');
 const profileTitle = document.querySelector('.profile__title');
 const profileSubtitle = document.querySelector('.profile__subtitle');
 const elementTemplate = document.querySelector('#element-template');
@@ -51,14 +51,15 @@ const initialCards = [
   const popupSubtitle = popupImageBox.querySelector('.popup__subtitle');
   const closeButtonImage = popupImageBox.querySelector('.popup__close');
 
-  enableValidation({
+  const config = {
     formSelector: '.popup__form',
     inputSelector: '.popup__input',
     submitButtonSelector: '.popup__button',
     inactiveButtonClass: 'popup__button_disabled',
     inputErrorClass: 'popup__input_type_error',
     errorClass: 'popup__error_visible'
-  });
+  }
+  enableValidation(config);
  
 function openPopup(item) {
   item.classList.add('popup_opened');
@@ -140,15 +141,15 @@ function closeEscape (item) {
  });
 }
 
-openPopupButton.addEventListener('click', () => {
-  openPopup(popup);
+buttonOpenProfilePopup.addEventListener('click', () => {
+  openPopup(popupProfile);
   nameInput.value = profileTitle.textContent;
   jobInput.value = profileSubtitle.textContent;
 });
 
-closePopupButton.addEventListener('click', () => {
-  clearForm (formElement);
-  closePopup(popup);
+buttonClosePopup.addEventListener('click', () => {
+  clearForm (formProfile);
+  closePopup(popupProfile);
 });
 
 openAddButton.addEventListener('click', () => {
@@ -164,9 +165,9 @@ function addNewProfile (evt) {
   evt.preventDefault();
   profileTitle.textContent = nameInput.value;
   profileSubtitle.textContent = jobInput.value;
-  clearForm (formElement);
-  closePopup(popup);
+  clearForm (formProfile);
+  closePopup(popupProfile);
 }
 
-formElement.addEventListener('submit', addNewProfile);
+formProfile.addEventListener('submit', addNewProfile);
 
