@@ -51,15 +51,11 @@ class FormValidator {
     return this._inputs.some(input => !input.validity.valid);
   }
 
-  clearForm (form, config) {
-    const errors = Array.from(this._form.querySelectorAll('.popup__error'));
-
+  clearForm() {
     this._inputs.forEach(input => {
-    input.value = ''; 
-    input.classList.remove(this._config.inputErrorClass); 
+    input.value = '';
+    this._hideInputError(input);
   });
-
-  errors.forEach(error => error.classList.remove('popup__error_visible'));
   this._toggleButtonState();
 }
 

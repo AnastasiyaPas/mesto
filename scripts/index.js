@@ -75,21 +75,6 @@ closeButtonImage.addEventListener('click', () => {
   closePopup(popupImageBox);
 })
 
-//function clearForm (form) {
-//  const inputList = Array.from(form.querySelectorAll('.popup__input')); 
-//  const errors = Array.from(form.querySelectorAll('.popup__error')); 
-//  const button = form.querySelector('.popup__submit-button');
-
-//  inputList.forEach(input => {
-//    input.value = ''; 
-//    input.classList.remove('popup__input_type_error'); 
-//  });
-
-//  errors.forEach(error => error.classList.remove('popup__error_visible'));
-//   button.classList.add('popup__button_disabled');
-//   button.disabled = true;
-//}
-
 function closeOverlay (popupList) {
   popupList.forEach(popup => {
     popup.addEventListener('mousedown', (evt) => {
