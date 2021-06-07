@@ -6,7 +6,7 @@ class FormValidator {
     this._button = this._form.querySelector(this._config.submitButtonSelector);
   }
 
-  _setEventListeners(config) {
+  _setEventListeners() {
     this._inputs.forEach((input) => {
       input.addEventListener('input', () => {
         this._checkInputValidity(input);
@@ -51,9 +51,21 @@ class FormValidator {
     return this._inputs.some(input => !input.validity.valid);
   }
 
+  clearForm (form, config) {
+    const errors = Array.from(this._form.querySelectorAll('.popup__error'));
+
+    this._inputs.forEach(input => {
+    input.value = ''; 
+    input.classList.remove(this._config.inputErrorClass); 
+  });
+
+  errors.forEach(error => error.classList.remove('popup__error_visible'));
+  this._toggleButtonState();
+}
+
   enableValidation() {
     this._form.addEventListener('submit', e => e.preventDefault());
-    this._setEventListeners(this._form, this._config);
+    this._setEventListeners();
   }
 }
 
